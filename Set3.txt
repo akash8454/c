@@ -1,0 +1,80 @@
+Set3....
+1...
+import random as random
+# Generate a list of 10 random integers between 1 and 100
+random_list = [random.randint(1, 100) for _ in range(10)]
+print("Original list:", random_list)
+
+# Task 1: Find the second largest and second smallest numbers in the list
+sorted_list = sorted(random_list)
+
+second_smallest = sorted_list[1]  # Second smallest number
+second_largest = sorted_list[-2]  # Second largest number
+
+print("Second smallest number:", second_smallest)
+print("Second largest number:", second_largest)
+
+# Task 2: Separate the numbers into even and odd lists
+even_numbers = [num for num in random_list if num % 2 == 0]
+odd_numbers = [num for num in random_list if num % 2 != 0]
+
+# Task 3: Sort both lists in descending order
+even_numbers.sort(reverse=True)
+odd_numbers.sort(reverse=True)
+
+print("Even numbers in descending order:", even_numbers)
+print("Odd numbers in descending order:", odd_numbers)
+
+
+
+2.....
+# Taking input from the user
+sentence = input("Enter a sentence: ").strip()
+
+# Counting the number of words by splitting the sentence
+words = sentence.split()
+
+# Printing the number of words
+print("Number of words in the sentence:", len(words))
+
+# b
+
+# Taking input from the user
+sentence = input("Enter a sentence: ").strip()
+
+# Initializing an empty dictionary to store character frequencies
+char_frequency = {}
+
+# Loop through each character in the sentence
+for char in sentence:
+    if char != ' ':  # Skipping spaces
+        if char in char_frequency:
+            char_frequency[char] += 1
+        else:
+            char_frequency[char] = 1
+
+# Printing the character frequencies
+print("Character frequencies:", char_frequency)
+
+#c Taking input from the user
+sentence = input("Enter a sentence: ").strip()
+
+# Initializing an empty dictionary to store character frequencies
+char_frequency = {}
+
+# Loop through each character in the sentence
+for char in sentence:
+    if char != ' ':  # Skipping spaces
+        if char in char_frequency:
+            char_frequency[char] += 1
+        else:
+            char_frequency[char] = 1
+
+# Finding the maximum frequency
+max_freq = max(char_frequency.values())
+
+# Finding all characters with the maximum frequency
+most_frequent_chars = [char for char, freq in char_frequency.items() if freq == max_freq]
+
+# Printing the most frequent character(s)
+print("Most frequent character(s):", ', '.join(most_frequent_chars), "with frequency:", max_freq)

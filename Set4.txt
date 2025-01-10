@@ -1,0 +1,59 @@
+Set4
+
+1)
+datalist = [45, 28, -11, 0, 28, 10, -4, 45, 3, 19, -8, 7, 10, 3, 0, 28, 12, -6, -11, 10, 3]
+print("Original list:", datalist)
+# a)
+datalist = list(dict.fromkeys(datalist))
+print("List without duplicates:", datalist)
+# b)
+list3 = sorted(datalist) 
+print("Fifth smallest:", list3[4])  
+print("2nd largest:", list3[-2])  
+# c)
+rotated_list = list3[-3:] + list3[:-3]
+print("Rotated list:", rotated_list)
+#d)
+evenlist = []
+oddlist = []
+for i in list3:
+    if i % 2 == 0:
+        evenlist.append(i)
+    else:
+        oddlist.append(i)
+print("Even list:", evenlist)
+print("Odd list:", oddlist)
+
+
+
+2...
+product_IDs = [1001, 1002, 1003, 1004, 1005, 1006]
+prices = [250, 450, 300, 800, 150, 600]
+
+# a - Create a dictionary and map IDs with prices without using zip
+productpricedict = {}
+for i in range(len(product_IDs)):  # Use index-based iteration
+    productpricedict[product_IDs[i]] = prices[i]  # Map product ID to price
+
+print("Product Price Dictionary:", productpricedict)
+
+# b - Find the price of the most expensive product without using built-in functions
+most_expensive_price = prices[0]  # Start with the first price
+for price in prices:
+    if price > most_expensive_price:  # Compare each price with the current maximum
+        most_expensive_price = price
+
+print("Most expensive product price:", most_expensive_price)
+
+# c - Function that accepts product ID and returns the corresponding price, or a message if not found
+def get_product_price(product_id):
+    if product_id in productpricedict:
+        return productpricedict[product_id]
+    else:
+        return "Product ID not found"
+
+# Example usage of the function:
+print(get_product_price(1004))  # Should return the price for product ID 1004
+print(get_product_price(1010))  # Should return "Product ID not found" since 1010 doesn't exist
+
+
